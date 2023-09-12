@@ -44,3 +44,19 @@
   679  docker rm $(docker ps -aq)
   680  docker rmi 1f6ddc1b2547
   681  docker images
+
+## Format Command
+45  docker inspect $(docker ps -l) 
+   46  docker ps -l
+   47  docker ps -l -q 
+   48  docker inspect $(docker ps -lq) 
+   49  docker ps 
+   50  docker ps -q
+   51  docker inspect $(docker ps -q)
+   52  docker inspect $(docker ps -q) | wc -l 
+   53  docker ps 
+   54  docker run -itd ubuntu top 
+   55  docker ps 
+   56  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+   57  docker inspect --format '{{.Name}} - {{.State.Running}} - {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+   58  docker inspect --format '{{.Name}} - {{.State.Running}} - {{.NetworkSettings.IPAddress}}' $(docker ps -qa)
