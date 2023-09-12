@@ -63,3 +63,16 @@
    90  cd ..
    91  ls
    92  history > history.txt 
+
+
+
+## Save & Load Docker Images 
+
+  130  docker images 
+  131  docker save 88dbf5117d80 > myimage.tar.gz
+
+## You can copy the saved tarball to the desination server & restore with the below commands
+
+  133 docker load < myimage.tar.gz 
+  134 docker tag <restore_image_id> myimage:v1 
+  135 docker run -d myimage:v1
