@@ -1,0 +1,19 @@
+ 131  docker run -d amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3
+  132  docker ps
+  133  docker inspect 48ce9477cb1d
+  134  curl 172.17.0.2
+  135  curl 172.17.0.2/info.html
+  136  docker run -d amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3
+  137  docker ps
+  138  docker run -d -p 80:80 --name ntw-test-1 amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3
+  139  docker ps
+  140  docker run -d -p 80:80 --name ntw-test-2 amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3
+  141  docker run -d -p 8081:80 --name ntw-test-2 amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3
+  142  docker run -d -p 8081:80 --name ntw-test-3 amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3
+  143  docker ps
+  144  docker ps -a
+  145  docker run -d -p 8081:80 --name ntw-test-4 amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3
+  146  apt-get install net-tools -y
+  147  netstat -tulnp
+  148  docker run -d -P --name ntw-test-5 amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3
+  149  docker ps
