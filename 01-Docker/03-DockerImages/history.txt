@@ -76,3 +76,30 @@
   133 docker load < myimage.tar.gz 
   134 docker tag <restore_image_id> myimage:v1 
   135 docker run -d myimage:v1
+
+
+## IMAGE MGMT
+ docker login
+   49  docker push docker-k8s-ericsson-e-11-sept-2023:v1
+   50  docker login
+   51  docker tag docker-k8s-ericsson-e-11-sept-2023:v1 amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v1
+   52  docker tag docker-k8s-ericsson-e-11-sept-2023:v2 amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v2
+   53  docker push  amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v1
+   54  docker push  amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v2
+   55  docker push  amitvashist7 docker-k8s-ericsson-e-11-sept-2023:v3
+   56  docker push  amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3
+   57  docker tag docker-k8s-ericsson-e-11-sept-2023:v3 amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3
+   58  docker push  amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3
+   59  docker logout
+   60  docker kill $(docker ps -q) ; docker rm  $(docker ps -qa)
+   61  docker ps -a
+   62  ls
+   63  docker images
+   64  docker images -q
+   65  docker rmi $(docker images -q)
+   66  docker rmi $(docker images -q) --force
+   67  docker images
+   68  docker run -d --name web-1  amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3
+   69  docker ps
+   70  curl 172.17.0.2/info.html
+   71  docker images
