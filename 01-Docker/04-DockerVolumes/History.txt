@@ -1,0 +1,61 @@
+# Volumes
+   87  docker run -it -v /amit --name vol-case-default-1 busybox 
+   88  docker ps 
+   89  docker kill ca4a59d84f05
+   90  docker ps 
+   91  docker volume ls 
+   92  docker volume inspect e0efa20e72e9bac6d6e559aebe56fb28af1ab8036105be9348c10c4eea157d90
+   93  cd /var/lib/docker/volumes/e0efa20e72e9bac6d6e559aebe56fb28af1ab8036105be9348c10c4eea157d90/_data
+   94  ls
+   95  cat hello.txt 
+   96  cd 
+   97  docker kill $(docker ps -q) 
+   98  docker rm $(docker ps -qa) 
+   99  docker ps -a 
+  100  docker volume ls 
+  101  cat /var/lib/docker/volumes/e0efa20e72e9bac6d6e559aebe56fb28af1ab8036105be9348c10c4eea157d90/_data/hello.txt 
+  102  docker run -it -v /amit --name vol-case-default-2 busybox 
+  103  docker volume ls 
+  104  docker volume inspect e0efa20e72e9bac6d6e559aebe56fb28af1ab8036105be9348c10c4eea157d90
+  105  docker ps 
+  106  docker ps -a
+  107  docker inspect vol-case-default-2
+  108  ls
+  109  docker run -it -v /amit -v /vashist -v /myapp  --name vol-case-default-3 busybox 
+  110  docker run -it -v /config -v /publicview -v /logs  --name vol-case-default-4 busybox 
+  111  docker volumes ls 
+  112  docker volume ls 
+  113  docker kill $(docker ps -q) 
+  114  docker rm $(docker ps -qa) 
+  115  docker volume ls -q 
+  116  docker volume rm $(docker volume ls -q) 
+  117  ls
+  118  docker volume create my-vol
+  119  docker volume ls 
+  120  docker run -it -v my-vol:/amit  --name vol-case2-customvol-1 busybox 
+  24  docker volume ls 
+   25  docker volume ls | wc -l 
+   26  docker volume ls 
+   27  docker volume ls | wc -l 
+   28  ls
+   29  docker run -it -v my-vol:/amit  --name vol-case2-customvol-2 busybox
+   30  docker run -it -v my-vol:/amit:ro  --name vol-case2-customvol-3 busybox
+   31  ls
+   32  docker volumes ls 
+   33  docker volume ls 
+   34  pwd 
+   35  docker run -it -v /root/docker-k8s-ericsson-e-11-Sept-2023:/gitrepo  --name vol-case3-srcvol-1 busybox
+   36  ls
+   37  cd 01-Docker/
+   38  ls
+   39  mkdir 04-Volumes 
+   40  ls
+   41  rm -rf 04-Volumes/
+   42  ls
+   43  cp -rf /root/old/01-Docker/04-DockerVolumes . 
+   44  ls
+   45  cd 04-DockerVolumes/
+   46  ls
+   47  cat History.txt 
+   48  history 
+   49  history > History.txt 
