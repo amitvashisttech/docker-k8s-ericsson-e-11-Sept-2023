@@ -1,0 +1,12 @@
+---
+
+nginx: 
+  image: nginx:latest
+  ports:
+    - '8090:80'
+
+
+myapache: 
+  image: amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3
+  ports:
+    - '8091:80'    

@@ -1,0 +1,59 @@
+   73  cd 06-DockerCompose/
+   77  cd 00-Setup/
+   78  ls
+   79  sh install-dockercompose.sh 
+   80  ls
+   81  cd ..
+   82  ls
+   83  mkdir 01-Nginx 
+   84  ls
+   85  cd 01-Nginx/
+   86  ls
+   87  docker ps 
+   88  docker kill $(docker ps -a) ; docker rm $(docker ps -qa) 
+   89  docker ps -a 
+   90  ls
+   91  docker-compose up -d 
+   92  docker-compose ps 
+   93  docker-compose stop 
+   94  docker-compose rm 
+   95  ls
+   96  cd ..
+   97  ls
+   98  cp -rf 01-Nginx 02-Myapahe
+   99  ls
+  100  docker images 
+  101  ls
+  102  mv 02-Myapahe 02-Myapache
+  103  ls
+  104  cd 02-Myapache/
+  105  ls
+  106  docker-compose up -d 
+  107  docker-compose ps 
+  108  docker-compose kill 
+  109  docker-compose rm 
+  110  ls
+  111  cd ..
+  112  ls
+  113  mkdir 03-Build
+  114  ls
+  115  cd 03-Build/
+  116  ls
+  117  cp -rf ../../03-DockerImages/webserver/v2/* . 
+  118  ls
+  119  docker-compose up -d 
+  120  docker-compose ps 
+  121  docker-compose images 
+  122  docker-compose images ls
+  123  ls
+  124  vim index.html 
+  125  docker-compose up -d 
+  126  docker-compose up -d --build
+  127  docker-compose images ls
+  128  docker-compose images
+  129  docker-compose ps
+  130  ls
+  131  cd ..
+  132  ls
+  133  history 
+  134  history > history.txt 

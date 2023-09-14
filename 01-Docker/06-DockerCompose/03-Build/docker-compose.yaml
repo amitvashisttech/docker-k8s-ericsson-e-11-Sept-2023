@@ -1,0 +1,9 @@
+---
+
+version: '2'
+
+services:
+  webserverbuild:
+    build: . 
+    ports: 
+      - '30099:80'
