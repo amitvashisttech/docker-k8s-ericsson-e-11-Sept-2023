@@ -1,0 +1,13 @@
+---
+
+nginx: 
+  image: docker.example.com:5000/nginx
+  ports:
+    - '8090:80'
+
+
+myapache: 
+  image: docker.example.com:5000/webserver:v3
+  ports:
+    - '8091:80'    
+

@@ -1,0 +1,44 @@
+ ## Registry Deployment via DockerCompose. 
+  
+  138  mkdir 07-DockerRegistry
+  139  ls
+  140  cd 07-DockerRegistry/
+  141  ls
+  142  mkdir -p /opt/dockerregistry-storage
+  143  ls
+  144  docker-compose up -d 
+  152  docker ps 
+  153  docker-compose ps 
+  154  docker ps 
+  155  docker-compose ps 
+  156  cd /opt/dockerregistry-storage/
+  157  ls
+  167  ls
+
+## Its time to tag the images & push the same to our private DockerRegistry
+
+  100  docker tag 622ab4cdeee3 docker.example.com:5000/my-network-app:v1
+  102  docker tag f5a6b296b8a2 docker.example.com:5000/nginx
+  103  docker tag a416a98b71e2 docker.example.com:5000/busybox
+  104  docker tag fcb8f50866e5 docker.example.com:5000/webserver:v3
+  105  docker images
+  106  docker push docker.example.com:5000/busybox
+  107  docker push docker.example.com:5000/nginx
+  108  docker push docker.example.com:5000/my-network-app ; docker push docker.example.com:5000/webserver
+  109  docker push docker.example.com:5000/my-network-app:v1 ; docker push docker.example.com:5000/webserver:v3
+
+## Let's clean up old images & recently tagged images.
+  111  docker rmi docker.example.com:5000/busybox docker.example.com:5000/nginx amitvashist7/docker-k8s-ericsson-e-11-sept-2023:v3 docker.example.com:5000/my-network-app:v1 my-network-app:v1 busybox nginx
+  112  docker images
+  113  docker rmi docker.example.com:5000/webserver
+  114  docker rmi docker.example.com:5000/webserver:v3
+
+
+## Its a time to test the download & deployment of our images form private DockerRegistry.
+
+  168  cd /root/docker-k8s-ericsson-e-11-Sept-2023/01-Docker/07-DockerRegistry/02-Deployment-Test
+  182  docker-compose up -d 
+  183  docker-compose ps 
+  184  curl localhost:8090
+  185  curl localhost:8091
+  186  curl localhost:8091/info.html
