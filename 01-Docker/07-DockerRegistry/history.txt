@@ -1,4 +1,4 @@
- ## Registry Deployment via DockerCompose. 
+ ## Registry Deployment via DockerCompose.  
   
   138  mkdir 07-DockerRegistry
   139  ls
